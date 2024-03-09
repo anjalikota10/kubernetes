@@ -24,4 +24,11 @@ spec:
           value: "vertex123"
         - name: WORDPRESS_DB_NAME
           value: "wordpress"
-
+      
+      - name: mysql
+        image: mysql:latest
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "vertex123"
+        - name: MYSQL_DATABASE
+          value: "wordpress"
