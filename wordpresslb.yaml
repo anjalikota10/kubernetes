@@ -29,6 +29,6 @@ spec:
         image: mysql:latest
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: "vertex123"
+          value: "test123"
         - name: MYSQL_DATABASE
           value: "wordpress"
