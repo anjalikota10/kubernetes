@@ -1,3 +1,5 @@
+# In this example, initContainer will fetch index.html file for nginx container to serve the data
+# initContainer will show status as completed once job/task was successful done. So these initContainers should be assigned with any restart policy with Always
 apiVersion: v1
 kind: Pod
 metadata:
@@ -6,13 +8,14 @@ spec:
   containers:
   - name: nginx
     image: nginx
-    imagePullPolicy: IfNotPresent  
+    imagePullPolicy: IfNotPresent  #Always, Never
     ports:
     - containerPort: 80
     volumeMounts:
     - name: workdir
       mountPath: /usr/share/nginx/html
-    initContainers:
+  # These containers are run during pod initialization
+  initContainers:
   - name: install
     image: alpine
     command:
@@ -26,4 +29,4 @@ spec:
   dnsPolicy: Default
   volumes:
   - name: workdir
-    emptyDir: {}
+    emptyDir: {}  #emtryDir data will be stored on worker node under /var/lib/kubelet/pods/ with ID which can be picked from pod description
