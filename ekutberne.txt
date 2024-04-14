@@ -1,4 +1,0 @@
-kubernetes topics:-
-
-1. nginx.yaml- basic pod creation
-2. multipod.yaml- 
