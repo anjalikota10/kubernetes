@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: static-webapp
-        image: <your-account-id>.dkr.ecr.us-west-2.amazonaws.com/static-webapp:latest
+        image: 660665532013.dkr.ecr.ap-south-1.amazonaws.com/static-webapp:latest
         ports:
         - containerPort: 80
 ---
