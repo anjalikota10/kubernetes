@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: spring-boot-container
-        image: 660665532013.dkr.ecr.ap-south-1.amazonaws.com/springboot-app
+        image: 660665532013.dkr.ecr.ap-south-1.amazonaws.com/springboot
         ports:
         - containerPort: 8080
 
