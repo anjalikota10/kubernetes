@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spring-boot-deployment
+  name: java-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: spring-boot-app
+      app: java-app
   template:
     metadata:
       labels:
-        app: spring-boot-app
+        app: java-app
     spec:
       containers:
-      - name: spring-boot-container
+      - name: java-container
         image: 660665532013.dkr.ecr.ap-south-1.amazonaws.com/javamaven
         ports:
         - containerPort: 8080
@@ -22,11 +22,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: spring-boot-service
+  name: java-service
 spec:
   type: LoadBalancer
   selector:
-    app: spring-boot-app
+    app: java-app
   ports:
   - protocol: TCP
     port: 80
