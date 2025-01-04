@@ -3,13 +3,12 @@ kind: Service
 metadata:
   name: vertex-svc
   labels:
-    app: myvertexapp
+    app: nginx
     version: 2.6.1
 spec:
   type: ClusterIP
   ports:
-  - port: 8080
+  - port: 80
     protocol: TCP
   selector:
-    app: myvertexapp
-    version: 2.6.1
+    app: nginx
