@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: educational-deployment
+  labels:
+    app: edu
+  namespace: nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: edu
+  template:
+    metadata:
+      labels:
+        app: edu
+    spec:
+      containers:
+      - name: edu
+        image: devops830/educational-portal:latest
+        ports:
+        - containerPort: 8000
+
+
